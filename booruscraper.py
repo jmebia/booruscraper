@@ -5,7 +5,12 @@ import sys, os, requests, shutil
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
 
-def start_booruscraper(tag):
+print("Starting...")
+
+
+def scrape(tag):
+
+    print("scraping...")
 
     MAX_PAGE_SEARCH = 1
     page = 1
@@ -56,7 +61,12 @@ def start_booruscraper(tag):
 
         # increment page
         page += 1
-
-
+		
+		
 def space_to_underscore(string_):
     return "_".join(string_.split())
+
+	
+# a simple dialog to get tag from user
+tag = input("Danbooru image tag: ")
+scrape(tag)
